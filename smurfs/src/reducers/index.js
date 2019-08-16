@@ -32,7 +32,9 @@ function reducer(state=initialState, action) {
 
         case FETCH_CHARACTERS_FAILURE:
             return {
-                ...state
+                ...state,
+                success: state.success,
+                error: action.payload
             }
 
         case POST_CHARACTERS_START:

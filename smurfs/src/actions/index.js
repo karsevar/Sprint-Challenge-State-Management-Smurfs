@@ -9,7 +9,7 @@ export const getCharacters = () => dispatch => {
     axios
         .get('http://localhost:3333/smurfs')
         .then(res => {
-            // console.log(res.data);
+            console.log(res.data);
             dispatch({type: FETCH_CHARACTERS_SUCCESS, payload: res.data})
         })
         .catch(err => {

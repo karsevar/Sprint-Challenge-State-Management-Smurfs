@@ -7,7 +7,7 @@ function CharacterCard (props) {
 
     useEffect(() => {
         props.getCharacters()
-    })
+    }, [])
     return (
         <div>
             <h3>Displaying Smurfs</h3>
@@ -15,6 +15,8 @@ function CharacterCard (props) {
                 return (
                     <div className='smurf-card' key={index}>
                         <h3>{smurf.name}</h3>
+                        <p>{smurf.age}</p>
+                        <p>{smurf.height}</p>
                     </div>
                 )
             })}

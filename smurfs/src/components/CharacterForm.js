@@ -50,4 +50,9 @@ function CharacterForm(props) {
     )
 }
 
-export default connect(null, {addCharacter})(CharacterForm);
+const mapStateToProps = state => ({
+    error: state.error,
+    success: state.success
+})
+
+export default connect(mapStateToProps, {addCharacter})(CharacterForm);

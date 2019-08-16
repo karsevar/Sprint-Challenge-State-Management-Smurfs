@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {addCharacter} from '../actions';
 import {connect} from 'react-redux';
 
 function CharacterForm(props) {
@@ -13,6 +14,8 @@ function CharacterForm(props) {
     const handleSubmit = event => {
         event.preventDefault();
         console.log('handleSubmit', smurf);
+        props.addCharacter(smurf);
+        setSmurf({name: '', height: '', age: ''})
     }
 
     return (
@@ -47,4 +50,4 @@ function CharacterForm(props) {
     )
 }
 
-export default CharacterForm;
+export default connect(null, {addCharacter})(CharacterForm);

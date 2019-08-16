@@ -17,4 +17,21 @@ export const getCharacters = () => dispatch => {
             // dispatch({type: FETCH_CHARACTERS_FAILURE, payload:`${err.response.data.error} ${err.response.status}`}) 
         })
     
+};
+
+export const POST_CHARACTERS_START = 'POST_CHARACTER_START';
+export const POST_CHARACTERS_SUCCESS = 'POST_CHARACTER_SUCCESS';
+export const POST_CHARACTERS_FAILURE = 'POST_CHARACTER_FAILURE';
+
+export const addCharacter = (value) => dispatch => {
+    dispatch({type: POST_CHARACTERS_START});
+    console.log('in the addCharacter function', value) 
+    axios 
+        .post('http://localhost:3333/smurfs', value)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        })
 }

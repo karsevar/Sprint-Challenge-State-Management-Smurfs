@@ -4,14 +4,14 @@ function CharacterForm(props) {
     
     const [smurf, setSmurf] = useState({name: '', height: '', age: ''});
 
-    const handleChage = event => {
-        console.log(smurf);
+    const handleChange = event => {
+        console.log('handleChange', smurf);
         setSmurf({...smurf, [event.target.name]: event.target.value})
     }
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(smurf);
+        console.log('handleSubmit', smurf);
     }
 
     return (
@@ -36,6 +36,7 @@ function CharacterForm(props) {
                     placeholder='age'
                     type='number'
                     value={smurf.age}
+                    onChange={handleChange}
                     name='age'
                     required
                 />

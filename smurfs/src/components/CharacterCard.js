@@ -8,6 +8,7 @@ function CharacterCard (props) {
     useEffect(() => {
         props.getCharacters()
     }, [])
+    
     return (
         <div>
             <h3>Displaying Smurfs</h3>

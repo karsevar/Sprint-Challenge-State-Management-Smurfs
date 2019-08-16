@@ -17,7 +17,8 @@ function reducer(state=initialState, action) {
 
         case FETCH_CHARACTERS_SUCCESS:
             return {
-                ...state
+                ...state,
+                smurfs: action.payload
             }
 
         case FETCH_CHARACTERS_FAILURE:

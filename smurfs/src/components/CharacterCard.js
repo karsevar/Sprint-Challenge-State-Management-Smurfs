@@ -11,10 +11,10 @@ function CharacterCard (props) {
     return (
         <div>
             <h3>Displaying Smurfs</h3>
-            {props.smurfs && props.smurfs.map(smurf => {
+            {props.smurfs && props.smurfs.map((smurf, index) => {
                 return (
-                    <div className='smurf-card'>
-                        <h3>smurf.name</h3>
+                    <div className='smurf-card' key={index}>
+                        <h3>{smurf.name}</h3>
                     </div>
                 )
             })}

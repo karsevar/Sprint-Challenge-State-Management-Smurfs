@@ -25,12 +25,12 @@ export const POST_CHARACTERS_FAILURE = 'POST_CHARACTER_FAILURE';
 
 export const addCharacter = (value) => dispatch => {
     dispatch({type: POST_CHARACTERS_START});
-    console.log('in the addCharacter function', value) 
+    // console.log('in the addCharacter function', value) 
     axios 
-        .post('http://localhost:3333/smit', value)
+        .post('http://localhost:3333/smurfs', value)
         .then(res => {
-            console.log(res.config.data)
-            dispatch({type: POST_CHARACTERS_SUCCESS, payload: `${res.config.data.name} was added to village`})
+            // console.log('Success State', res.config.data)
+            dispatch({type: POST_CHARACTERS_SUCCESS, payload: `A smurf was added to the village`})
         })
         .catch(err => {
             dispatch({type: POST_CHARACTERS_FAILURE, payload: 'Unable to post Smurf'})
